@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot name="adept">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model/meshes/link0.dae" scale="0.00254 0.00254 0.00254"/>
+      </geometry>
+    </visual>
+  </link>
+
+<link name="link_one">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model/meshes/link1.dae" scale="0.00254 0.00254 0.00254"/>
+      </geometry>
+    </visual>
+  </link>
+
+<link name="link_two">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model/meshes/link2.dae" scale="0.00254 0.00254 0.00254"/>
+      </geometry>
+    </visual>
+  </link>
+
+<link name="link_three">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model/meshes/link3.dae" scale="0.00254 0.00254 0.00254"/>
+      </geometry>
+    </visual>
+  </link>
+
+<link name="link_four">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model/meshes/link4.dae" scale="0.00254 0.00254 0.00254"/>
+      </geometry>
+    </visual>
+  </link>
+
+<joint name="joint_1" type="continuous">
+	<parent link="base_link"/>
+	<child  link="link_one"/>
+	<origin xyz="0 279.4 0"/>
+	
+</joint>
+
+<joint name="joint_2" type="continuous">
+	<parent link="link_one"/>
+	<child  link="link_two"/>
+	<origin xyz="0 300 0"/>
+	
+</joint>
+
+<joint name="joint_3" type="continuous">
+	<parent link="link_two"/>
+	<child  link="link_three"/>
+	<origin xyz="0 0 0"/>
+	
+</joint>
+
+<joint name="joint_4" type="continuous">
+	<parent link="link_three"/>
+	<child  link="link_four"/>
+	<origin xyz="0 0 0"/>
+</joint>	
+</robot>

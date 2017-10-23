@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="adept">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://adept_model/meshes/link0.DAE"/>
+      </geometry>
+    </visual>
+  </link>
+ </robot>

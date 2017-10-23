@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="adept_model_detailed">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/adept1.dae"/>
+      </geometry>
+     <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+<link name="link_one">
+    <visual>
+      <geometry>
+       <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/adept2.dae"/>
+      </geometry>
+	<origin rpy="0 0 0" xyz="0.425 0 0"/>
+    </visual>
+  </link>
+
+<link name="link_two">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/adept3.dae"/>
+      </geometry>
+	<origin rpy="0 0 0" xyz="0.375 0 0"/>
+    </visual>
+  </link>
+<link name="link_three">
+    <visual>
+	<geometry>
+       <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/adept_point_link.dae"/>
+      </geometry>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+<link name="link_four">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/adept4.dae"/>
+      </geometry>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+<link name="link_five">
+    <visual>
+      <geometry>
+        <mesh filename="file:///home/viki/catkin_ws/src/adept_model_detailed/meshes/grip30.stl"/>
+      </geometry>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+<joint name="joint_1" type="revolute">
+	<parent link="base_link"/>
+	<child  link="link_one"/>
+	<limit lower="-2.6179" upper="2.6179" effort="30" velocity=".15" />
+	<origin xyz="0 0 0"/>
+	<axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_2" type="revolute">
+	<parent link="link_one"/>
+	<child  link="link_two"/>
+	<origin xyz="0.425 0 0"/>
+	<axis xyz="0 0 1"/>
+	<limit lower="-2.5656" upper="2.5656" effort="30" velocity=".15" />
+</joint>
+<joint name="joint_3" type="prismatic">
+	<parent link="link_two"/>
+	<child  link="link_three"/>
+	<axis xyz="0 0 1"/>
+	<origin xyz="0.375 0 0" rpy="0 0 0"/>
+	<limit effort="1000" lower="-0.3" upper="0.3" velocity="1"/>
+</joint>
+<joint name="joint_4" type="revolute">
+	<parent link="link_three"/>
+	<child  link="link_four"/>
+	<origin xyz="0 0 0.3" rpy="1.5707 0 0"/>
+	<axis xyz="0 -1 0"/>
+	<limit lower="-2.5656" upper="2.5656" effort="30" velocity=".15" />
+</joint>
+<joint name="joint_5" type="revolute">
+	<parent link="link_four"/>
+	<child  link="link_five"/>
+	<origin xyz="0 0 0" rpy="1.5707 0 0"/>
+	<axis xyz="0 1 0"/>
+	<limit lower="-2.5656" upper="2.5656" effort="30" velocity=".15" />
+</joint>
+</robot>
